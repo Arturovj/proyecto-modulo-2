@@ -86,6 +86,10 @@ module.exports.doRegister = (req, res, next) => {
     login(req, res, next)
   }
 
+  module.exports.doLoginGoogle = (req, res, next) => {
+    login(req, res, next, 'google-auth')
+  }
+
   module.exports.logout = (req, res, next) => {
     req.logout();
     res.redirect('/login');
