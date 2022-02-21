@@ -18,6 +18,7 @@ router.post('/register', authController.doRegister)
 router.get('/login', authController.login)
 router.post('/login', authController.doLogin)
 router.get('/activate/:token', authController.activate)
+router.get('/logout', authController.logout)
 
 
 

@@ -5,15 +5,17 @@ const mongoose = require('mongoose');
 const User = require('../models/user.model')
 
 passport.serializeUser((user, next) => {
-    next(null, user.id)
+  console.log(user, 'seria')
+    next(null, user._id)
 })
 
 passport.deserializeUser((id, next) => {
+  console.log(id, 'deserial')
     User.findById(id)
-    .then(user => {
+      .then(user => {
         next(null, user)
-    })
-    .catch(error)
+      })
+    .catch(next)
 })
 
 passport.use('local-auth', new LocalStrategy(
