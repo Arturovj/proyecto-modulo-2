@@ -10,7 +10,7 @@ require('./config/db.config')
 require('./config/hbs.config')
 require('./config/passport.config');
 
-//const sessionConfig = require('./config/session.config');
+const sessionConfig = require('./config/session.config');
 
 const app = express();
 
@@ -19,26 +19,27 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'))
 
 
-//app.use(sessionConfig);
+app.use(sessionConfig);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs')
 
 app.use(passport.initialize());
-//.use(passport.session());
+app.use(passport.session());
 
 app.use((req, res, next) => {
   console.log(req.user, "entrando")
   res.locals.currentUser = req.user;
+  console.log(req.user,'log')
   next();
 })
 
 const router = require('./config/routes.config')
 app.use('/', router)
 
-/**
- * Error Middlewares
- */
+/*
+ Error Middlewares
+*/
 
 app.use((req, res, next) => {
   next(createError(404, 'Page not found'));
