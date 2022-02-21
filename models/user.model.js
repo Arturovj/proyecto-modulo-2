@@ -22,9 +22,9 @@ const userSchema = new mongoose.Schema({
       required: 'password is required',
       match: [PASSWORD_PATTERN, 'password needs at least 8 chars'],
     },
-/*     googleID: {
+    googleID: {
       type: String
-    }, */
+    }, 
     image: {
       type: String,
       default: '',
