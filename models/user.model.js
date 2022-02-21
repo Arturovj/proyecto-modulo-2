@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     }, 
     image: {
       type: String,
-      default: '',
+      default: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Faui.atlassian.com%2Faui%2F8.8%2Fdocs%2Favatars.html&psig=AOvVaw0YvFYgP7uuOlN_jF19fjN4&ust=1645561107301000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMDrofzOkfYCFQAAAAAdAAAAABAD',
     },
      active: {
       type: Boolean,
