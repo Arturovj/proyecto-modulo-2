@@ -6,9 +6,12 @@
   }
 
 
+
 #home-header {
-    background-image: url('/img/cover-home1.jpg');
-    background-position: 48%;
+    background-image: url('/img/1128334.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 48% 25%;
     margin-bottom: -3rem;
     height: 70vh;
     display: flex;
@@ -127,7 +130,7 @@
 }
 
 body {
-    background-color: grey
+    background-color: #fec400;
 }
 
 

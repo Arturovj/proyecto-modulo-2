@@ -29,11 +29,11 @@ const userSchema = new mongoose.Schema({
       type: String,
       default: '',
     },
-/*     active: {
+     active: {
       type: Boolean,
       default: false
-    }, */
-/*     activationToken: {
+    }, 
+    activationToken: {
       type: String,
       default: () => {
         return Math.random().toString(36).substring(7) +
@@ -41,7 +41,7 @@ const userSchema = new mongoose.Schema({
         Math.random().toString(36).substring(7) +
         Math.random().toString(36).substring(7)
       }
-    } */
+    } 
   });
 
    userSchema.pre('save', function(next) {

@@ -1,15 +1,12 @@
 const mongoose = require('mongoose');
 const passport = require('passport');
 const User = require('../models/user.model');
+const mailer = require('../config/mailer.config')
 
 module.exports.register = (req, res, next) => {
     res.render('auth/register')
   }
   
-module.exports.login = (req, res, next) => {
-res.render('auth/login')
-}
-
 module.exports.doRegister = (req, res, next) => {
     const user = req.body;
   
@@ -28,8 +25,8 @@ module.exports.doRegister = (req, res, next) => {
           }
           return User.create(user)
             .then((createdUser) => {
-/*               mailer.sendActivationEmail(createdUser.email, createdUser.activationToken)
- */              res.redirect('/login')
+               mailer.sendActivationEmail(createdUser.email, createdUser.activationToken)
+              res.redirect('/login')
             })
   
         } 
@@ -43,26 +40,48 @@ module.exports.doRegister = (req, res, next) => {
       })
   }
 
-/*   const doLogin = (req, res, next, provider = 'local-auth') => {
-    passport.authenticate(provider, (err, user, validations) => {
+
+  module.exports.activate = (req, res, next) =>{
+    const activationToken = req.params.token;
+
+    User.findOneAndUpdate(
+      { activationToken, active: false},
+      { active: true }
+    )
+    .then(()=> {
+      res.redirect('/login')
+    })
+    .catch(error)
+
+  }
+
+
+
+
+  const login = (req, res, next, provider) => {
+    passport.authenticate(provider || "local-auth", (err, user, validations) => {
       if (err) {
         next(err)
       } else if(!user) {
-        res.status(404).render('auth/login', { errorMessage: validations.error })
+        res.status(404).render("auth/login", { errors: { email:  validations.error } })
       } else {
         req.login(user, (loginError) => {
-          console.log({user});
           if (loginError) {
             next(loginError)
           } else {
-            req.flash('flashMessage', 'You have succesfully signed in')
-            res.redirect('/profile')
+            res.redirect("/profile")
           }
         })
       }
     })(req, res, next)
   }
-  
+
+
+  module.exports.login = (req, res, next) => {
+    res.render('auth/login')
+    }
+
+
   module.exports.doLogin = (req, res, next) => {
-    doLogin(req, res, next)
-  } */
+    login(req, res, next)
+  } 
