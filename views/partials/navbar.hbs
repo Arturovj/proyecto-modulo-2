@@ -31,8 +31,9 @@
       <ul class="navbar-nav ms-auto">
         {{#if currentUser}}
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/profile">Profile</a>
+          <a class="nav-link active" aria-current="page" href="/profile">{{ currentUser.name }}</a>
         </li>
+        <img src="{{currentUser.image}}"/>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
         </li>
