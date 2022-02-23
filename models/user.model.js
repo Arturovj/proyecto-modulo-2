@@ -42,7 +42,10 @@ const userSchema = new mongoose.Schema({
         Math.random().toString(36).substring(7)
       }
     } 
-  });
+  },{
+    timestamps: true
+  }
+  );
 
    userSchema.pre('save', function(next) {
     const user = this;
