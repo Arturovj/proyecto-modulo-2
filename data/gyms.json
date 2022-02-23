@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Gymaco",
+        "address": "calle falsa 123",
+        "description": "descripción añadida desde macos"
+    },
+    {
+        "name": "Gymmy",
+        "address": "calle falsa 1234",
+        "description": "descripción añadida desde windows"
+    }
+]
