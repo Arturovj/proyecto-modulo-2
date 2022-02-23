@@ -4,9 +4,8 @@ const categories = Object.keys(require('../data/categories.json'))
 
 module.exports.list = (req, res, next) => {
     Gym.find()
-    .then((gyms) => res.render('gyms/list', {gyms})
+    .then((gyms) => res.render('gyms/list', {gyms}))
     .catch((error) => next(error))
-    )
 }
 
 module.exports.create = (req, res, next) => {
