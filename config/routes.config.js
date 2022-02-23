@@ -30,7 +30,9 @@ router.get('/logout', authController.logout)
 
 /* Gym routes */
 
-router.get('/gym', gymController.list)
+router.get('/gyms', gymController.list)
+router.get('/gyms/new', authMiddleware.isAuthenticated, gymController.create)
+router.post('/gyms', authMiddleware.isAuthenticated, gymController.doCreate)
 
 /* User routes */
 
