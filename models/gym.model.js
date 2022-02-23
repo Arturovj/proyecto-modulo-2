@@ -21,7 +21,7 @@ const gymSchema = new Schema ({
     },
     description: {
         type: String,
-        minlength: [20, 'Please add a description that is at least 20 characters long']
+        minlength: [10, 'Please add a description that is at least 20 characters long']
     },
     capacity: {
         type: Number,

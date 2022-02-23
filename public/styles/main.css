@@ -236,7 +236,7 @@ ul{
   .body-hover {
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
     background-color: var(--blue);
     color: rgb(250, 214, 71);
     font-family: "Roboto Condensed", sans-serif;
