@@ -55,7 +55,6 @@ passport.use('google-auth', new GoogleStrategy (
   },
   (accessToken, refreshToken, profile, next) => {
     const googleID = profile.id;
-    console.log(googleID);
     const email = profile.emails[0] ? profile.emails[0].value : undefined;
     const name = profile.displayName;
 
@@ -68,7 +67,6 @@ passport.use('google-auth', new GoogleStrategy (
       })
         .then (user => {
           if (user){
-            console.log(user);
             next(null, user)
           } else {
             return User.create({

@@ -386,6 +386,12 @@ ul{
     transform: rotate(-15deg);
     transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   }
+
+  .privacy {
+    background-color: #0000;
+    border: none;
+    color: #bbb;
+  }
   
 
 
