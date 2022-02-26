@@ -17,6 +17,12 @@ const SCOPES = [
 /* Misc routes */
 router.get('/', misc.home)
 
+router.get('/about', misc.about)
+router.get('/services', misc.services)
+router.get('/faq', misc.faq)
+router.get('/shop', misc.shop)
+
+
 /* Auth routes */
 
 router.get('/register', authController.register)
@@ -37,6 +43,14 @@ router.post('/gyms', authMiddleware.isAuthenticated, gymController.doCreate)
 /* User routes */
 
 router.get('/profile', authMiddleware.isAuthenticated, userController.profile)
+
+/* Footer routes */
+
+
+
+/* Social routes */
+
+
 
 
 module.exports = router
