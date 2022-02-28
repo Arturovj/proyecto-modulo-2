@@ -13,7 +13,7 @@ const gymSchema = new Schema ({
     },
     image: {
         type: String,
-        default: '',
+        default: 'https://www.goohttps://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80gle.com/url?sa=i&url=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fgym&psig=AOvVaw26mkgKy62XLUrro60nQsyJ&ust=1646163853990000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLjOgrCUo_YCFQAAAAAdAAAAABAD',
     },
     categories: {
         type: [String],
