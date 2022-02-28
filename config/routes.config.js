@@ -44,13 +44,5 @@ router.post('/gyms', authMiddleware.isAuthenticated, gymController.doCreate)
 
 router.get('/profile', authMiddleware.isAuthenticated, userController.profile)
 
-/* Footer routes */
-
-
-
-/* Social routes */
-
-
-
 
 module.exports = router
