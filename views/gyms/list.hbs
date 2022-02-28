@@ -1,7 +1,56 @@
-{{#each gyms as |gym|}}
-<h1>{{gym.name}}</h1>
+{{!-- 
+<h1></h1>
 <h2>{{gym.address}}</h2>
-<h3>{{gym.description}}</h3>
-    <a href="/gyms/{{gym.id}}" class="btn btn-primary mt-auto">Detail</a>
+<h3></h3>
+    
 
-{{/each}}
+<div class="container">
+    <div class="card-deck row mx-auto">
+    {{#each gyms as |gym|}}
+    <div class="card">
+        <img class="card-img-top" src="{{gym.image}}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">{{gym.name}}</h5>
+            <p class="card-text">{{gym.description}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <a href="/gyms/{{gym.id}}" class="btn btn-primary mt-auto">Detail</a>
+        </div>
+    </div>
+    {{/each}}
+    </div>
+</div> --}}
+
+<div class="container">
+  <div class="row mx-auto">
+    {{#each gyms as |gym|}}
+      <div class="col-xl-3 col-sm-6 col-xs-12 gy-4 d-flex align-items-stretch">
+        <div class="card w-100 " style="width: 18rem;">
+          <div class="position-relative">
+            <img src="{{gym.image}}" class="card-img-top" alt="...">
+{{!--             <button class="like-button border-0">
+              <i
+                data-id="{{gym.id}}"
+                class="
+                  like-action fa fa-heart
+                  {{#userLikedRestaurant likes=../likes restaurant=restaurant}}icon-liked{{/userLikedRestaurant}}
+                "
+              >
+              </i>
+            </button> --}}
+          </div>
+          <div class="card-body d-flex flex-column mt-2">
+            <h6 class="card-title">{{gym.name}}</h6>
+            <small class="card-text text-small mb-3">{{gym.description}}</small>
+            <a href="/gyms/{{gym.id}}" class="btn btn-primary mt-auto">Detail</a>
+{{!--             <a href="/gyms/{{gym.id}}/edit" class="btn btn-success mt-1">Editar</a>
+ --}}          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>
+
+
+
+{{!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/axios.js"></script> --}}
