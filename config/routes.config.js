@@ -39,7 +39,8 @@ router.get('/logout', authController.logout)
 router.get('/gyms', gymController.list)
 router.get('/gyms/new', authMiddleware.isAuthenticated, gymController.create)
 router.post('/gyms', authMiddleware.isAuthenticated, gymController.doCreate)
-
+router.get('/gyms/:id',gymController.detail)
+router.post('/gyms/:id', authMiddleware.isAuthenticated, gymController.doComment)
 /* User routes */
 
 router.get('/profile', authMiddleware.isAuthenticated, userController.profile)

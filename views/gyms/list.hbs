@@ -1,3 +1,7 @@
 {{#each gyms as |gym|}}
 <h1>{{gym.name}}</h1>
+<h2>{{gym.address}}</h2>
+<h3>{{gym.description}}</h3>
+    <a href="/gyms/{{gym.id}}" class="btn btn-primary mt-auto">Detail</a>
+
 {{/each}}

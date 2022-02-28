@@ -1,0 +1,24 @@
+<h1>DETAILS</h1>
+{{gym.name}}
+
+ {{#each gym.comments as |comment|}}
+        {{comment.user.name}}
+        {{comment.comment}}
+      {{/each}}
+
+
+ <form action="/gyms/{{gym._id}}" method="POST">
+
+  <div class="form-group mb-1">
+    <label for="comment">Name</label>
+    <input name="comment" type="text" class="form-control" id="comment" placeholder="Enter Comment"
+      value="{{ gym.comment }}">
+  
+      <div class="invalid-feedback">
+        {{errors.name.message}}
+      </div>
+
+     
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+ </form>

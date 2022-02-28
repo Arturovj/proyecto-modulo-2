@@ -30,5 +30,12 @@ const gymSchema = new Schema ({
     timestamps: true
 })
 
+gymSchema.virtual('comments',{
+    ref: 'Comment',
+    localField: '_id',
+    foreignField: 'gym',
+    justOne: false,
+})
+
 const Gym = mongoose.model('Gym', gymSchema)
 module.exports = Gym;
