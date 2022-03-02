@@ -54,9 +54,6 @@ const userSchema = new mongoose.Schema({
     justOne: false,
   })
 
-
-
-
    userSchema.pre('save', function(next) {
     const user = this;
   
