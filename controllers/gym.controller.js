@@ -65,7 +65,8 @@ module.exports.doComment = (req, res, next) => {
     const comment = {
         gym: req.params.id,
         user: req.user.id,
-        comment: req.body.comment
+        comment: req.body.comment,
+        rating: req.body.rating 
     }
     Comment.create(comment)
         .then((commentCreated) => res.redirect(`/gyms/${commentCreated.gym}`))
