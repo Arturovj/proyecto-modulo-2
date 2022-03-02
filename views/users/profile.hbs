@@ -14,6 +14,11 @@
     <h5>Preferences</h5>
     <div>
       <h6>Rated Gyms</h6>
+      {{#each gyms as |gym|}}
+      {{gym.name}}
+      {{gym.address}}
+      
+      {{/each}}
     </div>
     <div>
       <h6>Trainners</h6>
