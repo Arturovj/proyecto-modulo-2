@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
     }, 
     image: {
       type: String,
-      default: "",
+      default: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png",
     },
      active: {
       type: Boolean,
@@ -53,6 +53,9 @@ const userSchema = new mongoose.Schema({
     foreignField: 'user',
     justOne: false,
   })
+
+
+
 
    userSchema.pre('save', function(next) {
     const user = this;

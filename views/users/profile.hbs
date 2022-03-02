@@ -1,5 +1,22 @@
-<h1>Hello {{currentUser.name}} - {{currentUser.email}}</h1>
-
-{{#if currentUser.image}}
-  <img src="{{currentUser.image}}" alt="Imagen de usuario">
-{{/if}}
+<div class="profile-div" >
+  <div class="profile-image">
+    {{#if currentUser.image}}
+      <img src="{{currentUser.image}}" alt="Imagen de usuario">
+    {{/if}}
+  </div>
+  <div class="profile-info">
+    <h2>Your profile info</h1>
+    <br>
+    <h4>Name: {{currentUser.name}} </h4>
+    <h4>Email: {{currentUser.email}}</h4>
+  </div>
+  <div class="profile-preferences">
+    <h5>Preferences</h5>
+    <div>
+      <h6>Gyms</h6>
+    </div>
+    <div>
+      <h6>Trainners</h6>
+    </div>
+  </div>
+</div>

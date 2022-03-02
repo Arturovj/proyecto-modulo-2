@@ -31,10 +31,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         {{#if currentUser}}
+        <img class="navbar-image" src="{{currentUser.image}}"/>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/profile">{{ currentUser.name }}</a>
         </li>
-        <img src="{{currentUser.image}}"/>
         <li class="nav-item">
           <a class="nav-link active text-danger" aria-current="page" href="/logout">Logout</a>
         </li>
