@@ -1,30 +1,47 @@
 <h1>DETAILS</h1>
-{{gym.name}}
 
- {{#each gym.comments as |comment|}}
+<div><h2>{{gym.name}}</h2></div>
+ 
+
+ 
+
+ 
+
+      <div class="container-detail text-warning bg-dark mt-5 w-75 ml-5">
+    <div class="d-flex">
+        
+        <img src="{{gym.image}}" width="50%" class="card-img-top1" alt="">
+        <div class="info  col-6">
+            <h4 class="card-title mt-5 mx-5">{{gym.name}}</h4>
+
+            <p class="card-info mx-5"><small></small></p>
+            <p class="card-info mx-5"><small> <span class="fa fa-map-marker"></span><strong>Address: </strong>{{gym.address}}</small></p>
+            <p class="card-info mx-5"> <span class="fa fa-newspaper-o"></span><strong>Description: </strong>{{gym.description}}</p>
+            <p class="card-info mx-5"><small></small></p>
+        </div>
+        <img src="https://developers.google.com/maps/images/docs-landing-get-started-hero.png" class="googlemaps mx-5 w-25" alt="">
+    </div>
+    
+</div> 
+<div class="container-detail mt-5 pl-5">
+<a href="/gyms" class="btn-dark" >
+ <button type="button" class="btn btn-dark text-danger">GO BACK TO GYM LIST</button></a>
+ </div>
+
+
+{{#each gym.comments as |comment|}}
         {{comment.user.name}}
         {{comment.comment}}
         {{comment.rating}}
       {{/each}}
 
 
-
-
-
-
-
-
-
-
-      
-
-
  <form action="/gyms/{{gym._id}}" method="POST">
 
   <div class="form-group mb-1">
-    <label for="comment">Name</label>
-    <input name="comment" type="text" class="form-control" id="comment" placeholder="Enter Comment"
-      value="{{ gym.comment }}">
+    <label for="comment">{{ currentUser.name }}</label>
+    <textarea name="comment" type="text" class="form-control html-editor" id="comment" placeholder="Enter Comment"
+      value="{{ gym.comment }}"> </textarea>
   
       <div class="invalid-feedback">
         {{errors.name.message}}
@@ -49,3 +66,7 @@
  </form>
 
 <script src="/js/doComment.js"></script>
+
+
+
+
