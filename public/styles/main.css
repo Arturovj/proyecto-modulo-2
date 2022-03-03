@@ -580,3 +580,17 @@ ul{
 .fa {
     margin: 0 5px 0 0;
 }
+
+
+.card-img-top1 {
+    border-radius: 10%;
+  }
+
+.container-detail{
+    margin-left: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 10% 0% 0% 10%;
+}
+
