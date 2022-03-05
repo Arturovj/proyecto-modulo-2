@@ -1,7 +1,7 @@
 {{#if edit }}
   <form action="/gyms/{{gym.id}}/edit" method="POST" enctype="multipart/form-data">
 {{else}}
-  <form action="/gyms" method="POST">
+  <form action="/gyms" method="POST" enctype="multipart/form-data">
 {{/if}}
 <section class="vh-70 gradient-custom">
   <div class="container py-5 h-100">
@@ -27,6 +27,18 @@
     {{#if errors.address}}
       <div class="invalid-feedback">
         {{errors.address.message}}
+      </div>
+    {{/if}}
+  </div>
+
+
+  <div class="form-group mb-3">
+    <label for="timeline">Timeline</label>
+    <input name="timeline" type="text" class="form-control {{#if errors.timeline}}is-invalid{{/if}}" id="timeline" placeholder="Enter timeline"
+      value="{{ gym.timeline }}">
+    {{#if errors.timeline}}
+      <div class="invalid-feedback">
+        {{errors.timeline.message}}
       </div>
     {{/if}}
   </div>

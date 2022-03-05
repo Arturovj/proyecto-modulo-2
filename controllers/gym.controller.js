@@ -59,8 +59,10 @@ module.exports.create = (req, res, next) => {
 }
 
 module.exports.doCreate = (req, res, next) => {
+    let gym = req.body
+
     if (req.file) {
-        req.body.image = req.file.path
+        gym.image = req.file.path
     }
 
     let gymCategories = req.body.categories
@@ -69,8 +71,13 @@ module.exports.doCreate = (req, res, next) => {
         gymCategories = [gymCategories]
     }
 
-    Gym.create(req.body)
-        .then(() => res.redirect('/gyms'))
+    console.log('req.body', req.body)
+
+    Gym.create(gym)
+        .then((created) =>{
+            console.log(created)
+             res.redirect('/gyms')
+            })
         .catch((error) => {
             if (error instanceof mongoose.Error.ValidationError) {
                 res.status(400).render('gyms/new', {
