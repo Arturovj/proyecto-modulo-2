@@ -14,3 +14,15 @@ module.exports.profile = (req, res, next) => {
         res.render('users/profile', { gyms: cleanGyms })
     })
 }
+
+module.exports.edit = (req, res, next) => {
+
+    User.findById(req.params.id)
+      .then((user) => {
+        res.render('users/edit', {
+          user,
+        });
+      })
+      .catch(next)
+  
+  };

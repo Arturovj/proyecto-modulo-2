@@ -112,4 +112,39 @@ module.exports.doComment = (req, res, next) => {
   };
 
 
+  module.exports.edit = (req, res, next) => {
+
+    Gym.findById(req.params.id)
+      .then((gym) => {
+        res.render('gyms/edit', {
+          gym,
+        });
+      })
+      .catch(next)
+  
+  };
+
  
+module.exports.doEdit = (req, res, next) => {
+  Gym.findByIdAndUpdate(req.params.id, req.body, { runValidators: true, new: true })
+    .then((gym) => res.redirect(`/gyms/${gym.id}`))
+    .catch((error) => {
+      if (error instanceof mongoose.Error.ValidationError) {
+        req.body.id = req.params.id;
+        res.status(400).render('gym/edit', {
+          errors: error.errors,
+          gym: req.body,
+          categories: categories,
+        });
+      } else {
+        next(error);
+      }
+    });
+};
+
+  module.exports.delete = (req, res, next) => {
+    Gym.findByIdAndDelete(req.params.id)
+      .then(() => res.redirect('/gyms'))
+      .catch(error => next(error));
+  };
+
