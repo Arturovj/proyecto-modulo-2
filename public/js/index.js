@@ -71,3 +71,35 @@ const updateTestimonial = () => {
 };
 
 setInterval(updateTestimonial, 10000);
+
+
+
+// when the page product is loaded, we receive from the controller, the averageRating
+// here we convert the number in stars
+function numberToStars(rating) {
+    // Round to nearest half
+    rating = Math.round(rating * 2) / 2;
+    let output = [];
+    // Append all the filled whole stars
+    for (var i = rating; i >= 1; i--)
+      output.push('<i class="fa fa-star" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+    // If there is a half a star, append it
+    if (i == .5) output.push('<i class="fa fa-star-half-o" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+    // Fill the empty stars
+    for (let i = (5 - rating); i >= 1; i--)
+      output.push('<i class="fa fa-star-o" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+    return output.join('');
+  }
+  // average rating of the product displayed on product page comments
+
+  const allStarsRatings = document.getElementsByClassName("averageStars")
+  
+  for (spanRating of allStarsRatings) {
+      const rate = spanRating.dataset.rating
+      spanRating.innerHTML = numberToStars(rate);
+  }
+
+    const averageRating = document.getElementById("avRatingToIndexJs").innerHTML
+  document.getElementById("averageStars").innerHTML = numberToStars(averageRating);
+
+  
