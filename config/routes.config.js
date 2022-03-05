@@ -41,6 +41,11 @@ router.get('/gyms/new', authMiddleware.isAuthenticated, gymController.create)
 router.post('/gyms', authMiddleware.isAuthenticated, gymController.doCreate)
 router.get('/gyms/:id',gymController.detail)
 router.post('/gyms/:id', authMiddleware.isAuthenticated, gymController.doComment)
+router.get('/gyms/:id/edit', authMiddleware.isAuthenticated, gymController.edit);
+router.post('/gyms/:id/edit', authMiddleware.isAuthenticated, gymController.doEdit);
+router.post('/gyms/:id/delete', authMiddleware.isAuthenticated,gymController.delete);
+
+
 /* User routes */
 
 router.get('/profile', authMiddleware.isAuthenticated, userController.profile)
