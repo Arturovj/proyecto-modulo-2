@@ -7,8 +7,9 @@
 
  
 
-      <div class="container-detail text-warning bg-dark mt-5 w-75 ml-5">
+      <div class="container-detail text-warning bg-dark mt-5 w-80 mx-3">
     <div class="d-flex">
+        
         
         <img src="{{gym.image}}" width="50%" class="card-img-top1" alt="">
         <div class="info  col-6">
@@ -18,9 +19,14 @@
             <p class="card-info mx-5"><small> <span class="fa fa-map-marker"></span><strong>Address: </strong>{{gym.address}}</small></p>
             <p class="card-info mx-5"> <span class="fa fa-newspaper-o"></span><strong>Description: </strong>{{gym.description}}</p>
             <p class="card-info mx-5"><small></small></p>
+            
         </div>
-        <img src="https://developers.google.com/maps/images/docs-landing-get-started-hero.png" class="googlemaps mx-5 w-25" alt="">
+        
+        
     </div>
+
+
+    <div class="mx-2"id="googleMap"></div>
     
 </div> 
 <div class="container-detail mt-5 pl-5">
@@ -65,7 +71,22 @@
   <button type="submit" class="btn btn-primary">Send</button>
  </form>
 
+
+
+
+
+
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPHtWkh-7CC2CXc6kBBHh8EldnmlgbKCk&libraries=places"></script>  
+<script src="/js/googleMaps.js"></script>
+
 <script src="/js/doComment.js"></script>
+
+
+
 
 
 

@@ -590,3 +590,7 @@ max-width:fit-content;
 }
 
 
+#googleMap {
+    width: 30%;
+    height: 300px;
+}
