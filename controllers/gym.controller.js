@@ -6,28 +6,48 @@ const categories = Object.keys(require('../data/categories.json'))
 
 module.exports.list = (req, res, next) => {
     Gym.find()
-    .then((gyms) => res.render('gyms/list', {gyms}))
+    .populate('comments')
+    .then((gyms) => {
+        console.log(gyms)
+       const ratedGyms = gyms.map(gym => {
+            return {
+                ...gym._doc,
+                averageRating : gym.comments.reduce((acc, curr) => acc + curr.rating, 0) / gym.comments.length
+            }
+        })
+        console.log(ratedGyms)
+      
+        res.render('gyms/list', {gyms : ratedGyms})
+    })
     .catch((error) => next(error))
 }
 
 
 module.exports.detail = (req, res, next) => {
 
-    Gym.findById(req.params.id)
-      .populate({
-        path: 'comments',
-        populate: {
-          path: 'user',
-          model: 'User'
-        }
-      })
-      .then((gym) => {
-        if (gym) {
-          res.render('gyms/details', { gym });
-        } else {
-          res.redirect('/gyms');
-        }
-      })
+    Comment.find({ gym : req.params.id})
+    .then((result)=> {
+        let sumRatings = result.reduce((acc, curr) => acc + curr.rating, 0);
+        const averageRating = sumRatings / result.length
+        
+            return Gym.findById(req.params.id)
+            .populate({
+              path: 'comments',
+              populate: {
+                path: 'user',
+                model: 'User'
+              }
+            })
+            .then((gym) => {
+              if (gym) {
+                res.render('gyms/details', { gym, averageRating});
+              } else {
+                res.redirect('/gyms');
+              }
+            })
+        })
+    
+    
       .catch(error => next(error));
   };
 
@@ -39,6 +59,10 @@ module.exports.create = (req, res, next) => {
 }
 
 module.exports.doCreate = (req, res, next) => {
+    if (req.file) {
+        req.body.image = req.file.path
+    }
+
     let gymCategories = req.body.categories
     
     if (gymCategories && !Array.isArray(gymCategories)) {
@@ -87,6 +111,7 @@ module.exports.doComment = (req, res, next) => {
     //   });
   };
 
+
   module.exports.edit = (req, res, next) => {
 
     Gym.findById(req.params.id)
@@ -122,3 +147,4 @@ module.exports.doEdit = (req, res, next) => {
       .then(() => res.redirect('/gyms'))
       .catch(error => next(error));
   };
+

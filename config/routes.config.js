@@ -4,6 +4,8 @@ const misc = require('../controllers/misc.controller')
 const passport = require('passport')
 const authMiddleware = require('../middlewares/auth.middleware')
 
+const upload = require('../config/storage.config')
+
 
 const authController = require('../controllers/auth.controller')
 const userController = require('../controllers/user.controller')
@@ -38,7 +40,7 @@ router.get('/logout', authController.logout)
 
 router.get('/gyms', gymController.list)
 router.get('/gyms/new', authMiddleware.isAuthenticated, gymController.create)
-router.post('/gyms', authMiddleware.isAuthenticated, gymController.doCreate)
+router.post('/gyms', upload.single('image'), authMiddleware.isAuthenticated, gymController.doCreate)
 router.get('/gyms/:id',gymController.detail)
 router.post('/gyms/:id', authMiddleware.isAuthenticated, gymController.doComment)
 router.get('/gyms/:id/edit', authMiddleware.isAuthenticated, gymController.edit);
