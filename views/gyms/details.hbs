@@ -18,6 +18,7 @@
             <p class="card-info mx-5"><small></small></p>
             <p class="card-info mx-5"><small> <span class="fa fa-map-marker"></span><strong>Address: </strong>{{gym.address}}</small></p>
             <p class="card-info mx-5"> <span class="fa fa-newspaper-o"></span><strong>Description: </strong>{{gym.description}}</p>
+            <p class="card-info mx-5"> <span class="fa fa-clock-o"></span><strong>Timeline: </strong>{{gym.timeline}}</p>
             <p class="card-info mx-5"><a href="/gyms/{{gym.id}}/edit">edit it</a></p>
             <form action="/gyms/{{gym.id}}/delete" method="POST">
             <button type="submit">Delete it</button>
