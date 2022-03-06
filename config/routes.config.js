@@ -5,7 +5,7 @@ const passport = require('passport')
 const authMiddleware = require('../middlewares/auth.middleware')
 
 const upload = require('../config/storage.config')
-
+console.log(upload)
 
 const authController = require('../controllers/auth.controller')
 const userController = require('../controllers/user.controller')
@@ -43,14 +43,16 @@ router.get('/gyms/new', authMiddleware.isAuthenticated, gymController.create)
 router.post('/gyms', upload.single('image'), authMiddleware.isAuthenticated, gymController.doCreate)
 router.get('/gyms/:id',gymController.detail)
 router.post('/gyms/:id', authMiddleware.isAuthenticated, gymController.doComment)
-router.get('/gyms/:id/edit', authMiddleware.isAuthenticated, gymController.edit);
-router.post('/gyms/:id/edit', authMiddleware.isAuthenticated, gymController.doEdit);
+router.get('/gyms/:id/edit', authMiddleware.isAuthenticated, gymController.editGym);
+router.post('/gyms/:id/edit', authMiddleware.isAuthenticated, gymController.doEditGym);
 router.post('/gyms/:id/delete', authMiddleware.isAuthenticated,gymController.delete);
 
 
 /* User routes */
 
 router.get('/profile', authMiddleware.isAuthenticated, userController.profile)
+router.get('/users/:id/edit', authMiddleware.isAuthenticated, userController.editUser);
+router.post('/users/:id/edit', authMiddleware.isAuthenticated, upload.single('image'), userController.doEditUser);
 
 /* Footer routes */
 

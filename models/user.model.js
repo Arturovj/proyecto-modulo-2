@@ -11,6 +11,9 @@ const userSchema = new mongoose.Schema({
       required: 'name is required',
       minLength: [3, 'name needs at least 3 chars']
     },
+    surname: {
+      type: String
+    },
     email: {
       type: String,
       required: 'email is required',
@@ -21,6 +24,18 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: 'password is required',
       match: [PASSWORD_PATTERN, 'password needs at least 8 chars'],
+    },
+    phone: {
+      type: String
+    },
+    country: {
+      type: String
+    },
+    state: {
+      type: String
+    },
+    address: {
+      type:String
     },
     googleID: {
       type: String
