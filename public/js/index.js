@@ -72,8 +72,6 @@ const updateTestimonial = () => {
 
 setInterval(updateTestimonial, 10000);
 
-
-
 // when the page product is loaded, we receive from the controller, the averageRating
 // here we convert the number in stars
 function numberToStars(rating) {
@@ -92,14 +90,22 @@ function numberToStars(rating) {
   }
   // average rating of the product displayed on product page comments
 
-  const allStarsRatings = document.getElementsByClassName("averageStars")
-  
-  for (spanRating of allStarsRatings) {
-      const rate = spanRating.dataset.rating
-      spanRating.innerHTML = numberToStars(rate);
-  }
+const allStarsRatings = document.getElementsByClassName("averageStars")
+console.log(allStarsRatings)
 
-    const averageRating = document.getElementById("avRatingToIndexJs").innerHTML
-  document.getElementById("averageStars").innerHTML = numberToStars(averageRating);
+for (spanRating of allStarsRatings) {
+    const rate = spanRating.dataset.rating
+    spanRating.innerHTML = numberToStars(rate);
+}
 
+const averageRating = document.getElementById("avRatingToIndexJs").innerHTML
+document.getElementById("averageStars").innerHTML = numberToStars(averageRating);
+
+
+const commentRating = document.getElementsByClassName("commentRating")
+
+for (comRating of commentRating) {
+    const rate = comRating.dataset.rating
+    comRating.innerHTML = numberToStars(rate);
+}
   
