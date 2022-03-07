@@ -2,6 +2,12 @@ const hbs = require('hbs')
 
 hbs.registerPartials('./views/partials')
 
+
+hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
+
+
+
+
 // hbs.registerHelper('restaurantHasCategory', function (options) {
 //   const { restaurant, category } = options.hash;
 

@@ -4,12 +4,30 @@ const Comment = require("../models/comment.model")
 
 module.exports.profile = (req, res, next) => {
     Comment.find({user: req.user.id})
-    .populate('gym')
+    .populate({
+      path: 'gym',
+      populate: {
+        path: 'comments',
+        model: 'Comment'
+      }
+    })
     .then((comments) => {
-        const gyms = comments.map((comment) => comment.gym);
+        const gyms = comments.map((comment) => comment.gym).filter(g => g);
         const cleanGyms = [];
+        console.log(gyms)
         gyms.forEach((gym) => !cleanGyms.some(g => g.id === gym.id) && cleanGyms.push(gym))
-        res.render('partials/profile', { gyms: cleanGyms })
+        return cleanGyms
+
+
+        
+    }).then((gyms) => {
+      const ratedGyms = gyms.map(gym => {
+        return {
+            ...gym._doc,
+            averageRating : gym.comments.reduce((acc, curr) => acc + curr.rating, 0) / gym.comments.length
+        }
+      })
+      res.render('partials/profile', { gyms: ratedGyms })
     })
 }
 

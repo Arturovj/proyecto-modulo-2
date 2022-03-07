@@ -1,11 +1,3 @@
-<h1>DETAILS</h1>
-
-<div><h2>{{gym.name}}</h2></div>
- 
-
- 
-
- 
 
       <div class="container-detail text-warning bg-dark mt-5 w-80 mx-3">
     <div class="d-flex">
@@ -14,15 +6,24 @@
         <img src="{{gym.image}}" width="50%" class="card-img-top1" alt="">
         <div class="info  col-6">
             <h4 class="card-title mt-5 mx-5">{{gym.name}}</h4>
+             
+
+            <p class="card-info mx-5">Rating: <span id="averageStars"></span></p>
+    <p id="avRatingToIndexJs" hidden>{{averageRating}}</p>
 
             <p class="card-info mx-5"><small></small></p>
             <p class="card-info mx-5"><small> <span class="fa fa-map-marker"></span><strong>Address: </strong>{{gym.address}}</small></p>
             <p class="card-info mx-5"> <span class="fa fa-newspaper-o"></span><strong>Description: </strong>{{gym.description}}</p>
             <p class="card-info mx-5"> <span class="fa fa-clock-o"></span><strong>Timeline: </strong>{{gym.timeline}}</p>
-            <p class="card-info mx-5"><a href="/gyms/{{gym.id}}/edit">edit it</a></p>
-            <form action="/gyms/{{gym.id}}/delete" method="POST">
-            <button type="submit">Delete it</button>
-            </form>
+            <div class="d-flex">
+
+            <p class="card-info mx-5"><a href="/gyms/{{gym.id}}/edit" class="btn btn-secondary">edit it</a></p>
+            {{!-- <p class="card-info mx-5"> --}}
+                <form class="" action="/gyms/{{gym.id}}/delete" method="POST">
+                    <button class="btn btn-danger" type="submit">Delete it</button>
+                </form>
+            {{!-- </p> --}}
+            </div>
         </div>
         
         
@@ -38,16 +39,16 @@
  </div>
 
 
-{{#each gym.comments as |comment|}}
-        {{comment.user.name}}
-        {{comment.comment}}
-        {{comment.rating}}
-      {{/each}}
-
-
  <form action="/gyms/{{gym._id}}" method="POST">
 
   <div class="form-group mb-1">
+    <img
+            class="rounded-circle shadow-1-strong me-3"
+            src={{currentUser.image}}
+            alt="avatar"
+            width="65"
+            height="65"
+          />
     <label for="comment">{{ currentUser.name }}</label>
     <textarea name="comment" type="text" class="form-control html-editor" id="comment" placeholder="Enter Comment"
       value="{{ gym.comment }}"> </textarea>
@@ -78,10 +79,40 @@
 
 
 
-{{averageRating}}
+           
 
-<b>Rating: <span id="averageStars"></span></b>
-    <p id="avRatingToIndexJs" hidden>{{averageRating}}</p>
+    <div class="container my-5 py-5 text-dark">
+        {{#each gym.comments as |comment|}}
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-11 col-lg-9 col-xl-7">
+        <div class="d-flex flex-start mb-4">
+          <img
+            class="rounded-circle shadow-1-strong me-3"
+            src={{comment.user.image}}
+            alt="avatar"
+            width="65"
+            height="65"
+          />
+          <div class="card w-100">
+            <div class="card-body p-4">
+              <div class="">
+                <h5>{{comment.user.name}}</h5>
+                
+                <p>
+                  {{comment.comment}}
+                </p>
+
+            <div data-rating={{comment.rating}} class="commentRating"></div>   
+            <p class="small">{{dateFormat comment.createdAt "DD // MM  //YYYY"}}</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        {{/each}}
+        </div>
 
 
 

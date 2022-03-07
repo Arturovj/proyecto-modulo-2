@@ -14,6 +14,3 @@ module.exports.faq = (req, res, next) => {
   res.render('misc/faq')
 }
 
-module.exports.shop = (req, res, next) => {
-  res.render('misc/shop')
-}

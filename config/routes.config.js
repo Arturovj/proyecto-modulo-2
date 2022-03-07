@@ -10,6 +10,7 @@ console.log(upload)
 const authController = require('../controllers/auth.controller')
 const userController = require('../controllers/user.controller')
 const gymController = require('../controllers/gym.controller')
+const trainerController = require('../controllers/trainer.controller')
 
 const SCOPES = [
     "https://www.googleapis.com/auth/userinfo.profile",
@@ -22,7 +23,7 @@ router.get('/', misc.home)
 router.get('/about', misc.about)
 router.get('/services', misc.services)
 router.get('/faq', misc.faq)
-router.get('/shop', misc.shop)
+
 
 
 /* Auth routes */
@@ -61,6 +62,10 @@ router.post('/users/:id/edit', authMiddleware.isAuthenticated, upload.single('im
 /* Social routes */
 
 
+/* Trainer routes */
 
+router.get('/trainers', trainerController.trainersList)
+router.get('/trainers/newTrainer',authMiddleware.isAuthenticated, trainerController.createTrainer)
+// router.post('/trainers', upload.single('image'), authMiddleware.isAuthenticated, gymController.doCreateTrainer )
 
 module.exports = router
