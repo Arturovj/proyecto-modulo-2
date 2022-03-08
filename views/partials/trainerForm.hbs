@@ -1,0 +1,65 @@
+{{#if edit }}
+  <form action="/trainers/{{trainer.id}}/edit" method="POST" enctype="multipart/form-data">
+{{else}}
+  <form action="/trainers" method="POST" enctype="multipart/form-data">
+{{/if}}
+<section class="vh-70 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="card bg-dark text-white" style="border-radius: 1rem;">
+         <div class="card-body p-5 text-center">
+           <h2 class="fw-bold mb-2 text-uppercase">{{#if edit}}Edit {{else}} New {{/if}} trainer Form  </h2>
+      
+  <div class="form-group mb-3">
+    <label for="name">Name</label>
+    <input name="name" type="text" class="form-control {{#if errors.name}}is-invalid{{/if}}" id="name" placeholder="Enter name"
+      value="{{ trainer.name }}">
+    {{#if errors.name}}
+      <div class="invalid-feedback">
+        {{errors.name.message}}
+      </div>
+    {{/if}}
+  </div>
+
+<div class="form-group mb-3">
+        <label for="image" class="form-label">Upload image</label>
+        <input class="form-control {{#if errors.image}}is-invalid{{/if}}" name="image" type="file" id="image" placeholder="Enter image" value="{{ trainer.image }}">
+      {{#if errors.image}}
+      <div class="invalid-feedback">
+        {{errors.image.message}}
+      </div>
+    {{/if}}
+      </div>
+  
+  {{!-- <div class="form-group mb-1">
+    <label for="image">Image</label> --}}
+    
+        
+    {{!-- <input name="image" type="image" class="form-control {{#if errors.image}}is-invalid{{/if}}" id="image" placeholder="Enter image"
+      value="{{ trainer.image }}">
+    {{#if errors.image}}
+      <div class="invalid-feedback">
+        {{errors.image.message}}
+      </div>
+    {{/if}}
+  </div> --}}
+
+
+
+  <div class="form-group mb-3">
+    <label for="text">Description</label>
+    <textarea name="description" type="text" class="form-control html-editor {{#if errors.description}}is-invalid{{/if}}" id="text"
+      placeholder="Enter trainer description" rows="10">{{ trainer.description }}</textarea>
+    {{#if errors.description}}<div class="invalid-feedback">{{errors.description}}</div>
+    {{/if}}
+  </div>
+
+  <button class="btn btn-outline-light btn-lg px-5 mt-4 mb-4" type="submit">Send</button>
+  </div>
+  </div>
+  </div>
+  </div>
+  </section>
+</form>
+
+

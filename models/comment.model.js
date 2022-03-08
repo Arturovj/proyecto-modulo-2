@@ -16,7 +16,6 @@ const commentSchema = new Schema({
     trainer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Trainer',
-        required: true,
     },
 
     comment: {

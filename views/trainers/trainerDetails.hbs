@@ -1,0 +1,127 @@
+Trainer details 
+
+
+      <div class="container-detail text-warning bg-dark mt-5 w-80 mx-3">
+    <div class="d-flex">
+        
+        
+        <img src="{{trainer.image}}" width="50%" class="card-img-top1" alt="">
+        <div class="info  col-6">
+            <h4 class="card-title mt-5 mx-5">{{trainer.name}}</h4>
+             
+
+            <p class="card-info mx-5">Rating: <span id="averageStars"></span></p>
+    <p id="avRatingToIndexJs" hidden>{{averageRating}}</p>
+
+            <p class="card-info mx-5"><small></small></p>
+            <p class="card-info mx-5"><small> <span class="fa fa-map-marker"></span><strong>Address: </strong>{{trainer.address}}</small></p>
+            <p class="card-info mx-5"> <span class="fa fa-newspaper-o"></span><strong>Description: </strong>{{trainer.description}}</p>
+            <p class="card-info mx-5"> <span class="fa fa-clock-o"></span><strong>Timeline: </strong>{{trainer.timeline}}</p>
+            <div class="d-flex">
+
+            <p class="card-info mx-5"><a href="/trainers/{{trainer.id}}/edit" class="btn btn-secondary">edit it</a></p>
+            {{!-- <p class="card-info mx-5"> --}}
+                <form class="" action="/trainers/{{trainer.id}}/delete" method="POST">
+                    <button class="btn btn-danger" type="submit">Delete it</button>
+                </form>
+            {{!-- </p> --}}
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+    <div class="mx-2"id="googleMap"></div>
+    
+</div> 
+<div class="container-detail mt-5 pl-5">
+<a href="/trainers" class="btn-dark" >
+ <button type="button" class="btn btn-dark text-danger">GO BACK TO trainer LIST</button></a>
+ </div>
+
+
+ <form action="/trainers/{{trainer._id}}" method="POST">
+
+  <div class="form-group mb-1">
+    <img
+            class="rounded-circle shadow-1-strong me-3"
+            src={{currentUser.image}}
+            alt="avatar"
+            width="65"
+            height="65"
+          />
+    <label for="comment">{{ currentUser.name }}</label>
+    <textarea name="comment" type="text" class="form-control html-editor" id="comment" placeholder="Enter Comment"
+      value="{{ trainer.comment }}"> </textarea>
+  
+      <div class="invalid-feedback">
+        {{errors.name.message}}
+      </div>
+    <input name="rating" type="number" class="form-control rating" id="rating"
+      value="{{ trainer.rating }}" hidden>
+    <div class="rate">
+      <input type="radio" id="star5" name="rate" value="5" class="star" />
+      <label for="star5" title="text">5 stars</label>
+      <input type="radio" id="star4" name="rate" value="4" class="star" />
+      <label for="star4" title="text">4 stars</label>
+      <input type="radio" id="star3" name="rate" value="3" class="star" />
+      <label for="star3" title="text">3 stars</label>
+      <input type="radio" id="star2" name="rate" value="2" class="star" />
+      <label for="star2" title="text">2 stars</label>
+      <input type="radio" id="star1" name="rate" value="1" class="star" />
+      <label for="star1" title="text">1 star</label>
+    </div>    
+     
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+ </form>
+
+
+
+
+
+           
+
+    <div class="container my-5 py-5 text-dark">
+        {{#each trainer.comments as |comment|}}
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-11 col-lg-9 col-xl-7">
+        <div class="d-flex flex-start mb-4">
+          <img
+            class="rounded-circle shadow-1-strong me-3"
+            src={{comment.user.image}}
+            alt="avatar"
+            width="65"
+            height="65"
+          />
+          <div class="card w-100">
+            <div class="card-body p-4">
+              <div class="">
+                <h5>{{comment.user.name}}</h5>
+                
+                <p>
+                  {{comment.comment}}
+                </p>
+
+            <div data-rating={{comment.rating}} class="commentRating"></div>   
+            <p class="small">{{dateFormat comment.createdAt "DD // MM  //YYYY"}}</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        </div>
+        {{/each}}
+        </div>
+
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPHtWkh-7CC2CXc6kBBHh8EldnmlgbKCk&libraries=places"></script>  
+<script src="/js/googleMaps.js"></script>
+
+<script src="/js/doComment.js"></script>
+
+

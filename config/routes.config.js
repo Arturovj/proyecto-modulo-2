@@ -66,6 +66,10 @@ router.post('/users/:id/edit', authMiddleware.isAuthenticated, upload.single('im
 
 router.get('/trainers', trainerController.trainersList)
 router.get('/trainers/newTrainer',authMiddleware.isAuthenticated, trainerController.createTrainer)
-// router.post('/trainers', upload.single('image'), authMiddleware.isAuthenticated, gymController.doCreateTrainer )
+router.post('/trainers', upload.single('image'), authMiddleware.isAuthenticated, trainerController.doCreateTrainer )
+router.get('/trainers/:id', trainerController.trainerDetail)
+router.post('/trainers/:id', authMiddleware.isAuthenticated, trainerController.doCommentTrainer)
+
+
 
 module.exports = router
