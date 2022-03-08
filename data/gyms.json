@@ -1,12 +1,86 @@
 [
     {
-        "name": "Gymaco",
-        "address": "calle falsa 123",
-        "description": "descripción añadida desde macos"
+        "name": "LOONA Fitness",
+        "address": "C. de Rodríguez San Pedro, 5, 28015 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
     },
     {
-        "name": "Gymmy",
-        "address": "calle falsa 1234",
-        "description": "descripción añadida desde windows"
+        "name": "Opera Gym",
+        "address": "C. de Fomento, Nº 3, 28013 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Club Atlas",
+        "address": "C/ de la Estrella Polar, 20, 28007 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Urban Box",
+        "address": "C. de Martín de Vargas, 22, 28005 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Nine Fitness",
+        "address": "P.º de las Acacias, 3, 5, 28005 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Snap Fitness",
+        "address": "C. de Gutenberg, 11, 28014 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Anytime Fitness",
+        "address": "Av. de Pablo Iglesias, 39, 28039 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Alta Fit",
+        "address": "Cl. del Mármol, 5, 28005 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Wifit Gym",
+        "address": "C. de Cartagena, 16, 28028 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Arsenal Femenino",
+        "address": "C. de José Ortega y Gasset, 82, 28006 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Brooklyn Gym",
+        "address": "C. de Aquitania, 28, 28032 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
+    },
+    {
+        "name": "Gym McFit",
+        "address": "P.º de Sta. María de la Cabeza, 50, 28045 Madrid",
+        "description": "Gimnasio en el centro de Madrid",
+        "image":"https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&w=1000&q=80",
+        "timeline":"10:00 AM to 11:00 PM"
     }
 ]

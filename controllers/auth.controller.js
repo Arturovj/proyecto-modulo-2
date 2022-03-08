@@ -51,7 +51,7 @@ module.exports.doRegister = (req, res, next) => {
     .then(()=> {
       res.redirect('/login')
     })
-    .catch(error)
+    .catch(error => { next(error)})
 
   }
 

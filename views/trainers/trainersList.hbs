@@ -1,1 +1,37 @@
 Check out our trainers!
+
+
+
+<div class="container mb-5">
+  <div class="row mx-auto">
+    {{#each trainers as |trainer|}}
+      <div class="col-xl-3 col-sm-6 col-xs-12 gy-4 d-flex align-items-stretch">
+        <div class="card w-100 round-card " style="width: 18rem;">
+          <div class="position-relative">
+            <img src="{{trainer.image}}" class="card-img-top" alt="...">
+
+          </div> 
+          <div class="card-body d-flex flex-column mt-2">
+              <div class="trainer-name">
+                  <div>
+                <h6 class="card-title">{{trainer.name}}</h6>
+                 </div>
+                 <div>
+                     <div>
+            <b>Rating: <span data-rating={{trainer.averageRating}} class="averageStars"></span></b>
+                     </div>
+               
+                 
+                 </div>
+                 </div>
+            <small class="card-text text-small mb-3">
+                <span class="fa fa-newspaper-o"></span>{{trainer.description}}
+            </small>
+            <a href="/trainers/{{trainer._id}}" class="btn btn-dark mt-auto">Details</a>
+{{!--             <a href="/trainers/{{trainer.id}}/edit" class="btn btn-success mt-1">Editar</a>
+ --}}          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

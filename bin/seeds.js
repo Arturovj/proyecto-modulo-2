@@ -18,7 +18,6 @@ mongoose.connection.once('open', () => {
             new Gym({
               ...gym,
               categories: ['pool', 'martialArts', "gym"],
-              description: 'lorem sentence grater than 10 characters',
               capacity: Math.floor(Math.random() * 100 + 10),
             }).save()
             .then((createdGym) => console.log(createdGym))
@@ -27,7 +26,6 @@ mongoose.connection.once('open', () => {
           trainers.forEach(trainer => {
             new Trainer({
               ...trainer,
-              description: 'lorem sentence grater than 10 characters',
             }).save()
             .then((createdTrainer) => console.log(createdTrainer))
           })
