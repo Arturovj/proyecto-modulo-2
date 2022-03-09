@@ -5,7 +5,6 @@ const commentSchema = new Schema({
     gym : {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Gym',
-        required: true,
     },
 
     user: {
