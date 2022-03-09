@@ -9,6 +9,7 @@ module.exports.register = (req, res, next) => {
   
 module.exports.doRegister = (req, res, next) => {
     const user = req.body;
+    console.log('+++++++++ ', req.body)
   
     // { email: 'Already in use' }
     const renderWithErrors = (errors) => {

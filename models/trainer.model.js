@@ -15,6 +15,20 @@ const trainerSchema = new Schema ({
         type: String,
         minlength: [10, 'Please add a description that is at least 20 characters long']
     },
+    contact: {
+        type: String,
+        required: [true, 'Contact form is required']
+    },
+    instagram: {
+        type: String,
+    },
+    twitter: {
+        type: String,
+    },
+    facebook: {
+        type: String,
+    },
+
 },{
     timestamps: true
 })

@@ -1,10 +1,20 @@
 [
     {
-        "name": "Antonio",
-        "description": "descripción añadida desde macos"
+        "name": "Arnold Schwarzenegger",
+        "description": "descripción añadida desde macos",
+        "contact": "trainer@gmail.com",
+        "image": "https://avatarfiles.alphacoders.com/812/81266.jpg",
+        "instagram": "",
+        "facebook": "",
+        "twitter": ""
     },
     {
         "name": "Manuel",
-        "description": "descripción añadida desde windows"
+        "description": "descripción añadida desde windows",
+        "contact": "trainer2@gmail.com",
+        "image": "https://avatarfiles.alphacoders.com/812/81266.jpg",
+        "instagram": "",
+        "facebook": "",
+        "twitter": ""
     }
 ]

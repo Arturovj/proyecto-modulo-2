@@ -1,23 +1,28 @@
 Trainer details 
 
 
-      <div class="container-detail text-warning bg-dark mt-5 w-80 mx-3">
-    <div class="d-flex">
-        
-        
-        <img src="{{trainer.image}}" width="50%" class="card-img-top1" alt="">
-        <div class="info  col-6">
-            <h4 class="card-title mt-5 mx-5">{{trainer.name}}</h4>
-             
-
-            <p class="card-info mx-5">Rating: <span id="averageStars"></span></p>
+<div class="body-trainer">
+<!-- partial:index.partial.html -->
+<div class="container-trainer">
+  <div class="avatar-flip">
+    <img src="{{trainer.image}}" height="150" width="150">
+    <img src="/img/gymlogo.png" height="150" width="150">
+  </div>
+  <p class="card-info mx-5"> <span id="averageStars"></span></p>
     <p id="avRatingToIndexJs" hidden>{{averageRating}}</p>
+  <h2 class="trainer-name-position h2font">{{trainer.name}}</h2>
+  <h4 class="h4font">Description</h4>
+  <p class="pfont">{{trainer.description}}</p>
+  <p class="pfont">Connec dolore ipsum faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.</p>
 
-            <p class="card-info mx-5"><small></small></p>
-            <p class="card-info mx-5"><small> <span class="fa fa-map-marker"></span><strong>Address: </strong>{{trainer.address}}</small></p>
-            <p class="card-info mx-5"> <span class="fa fa-newspaper-o"></span><strong>Description: </strong>{{trainer.description}}</p>
-            <p class="card-info mx-5"> <span class="fa fa-clock-o"></span><strong>Timeline: </strong>{{trainer.timeline}}</p>
-            <div class="d-flex">
+  <div id="social">
+  <a class="facebookBtn renBtn" href="#" ></a>
+  <a class="twitterBtn renBtn" href="#" ></a>
+  <a class="instagramBtn renBtn" href="#" ></a>
+</div>
+	
+
+  <div class="d-flex">
 
             <p class="card-info mx-5"><a href="/trainers/{{trainer.id}}/edit" class="btn btn-secondary">edit it</a></p>
             {{!-- <p class="card-info mx-5"> --}}
@@ -26,15 +31,11 @@ Trainer details
                 </form>
             {{!-- </p> --}}
             </div>
-        </div>
-        
-        
-    </div>
+</div>
+<!-- partial -->
+</div>
 
 
-    <div class="mx-2"id="googleMap"></div>
-    
-</div> 
 <div class="container-detail mt-5 pl-5">
 <a href="/trainers" class="btn-dark" >
  <button type="button" class="btn btn-dark text-danger">GO BACK TO trainer LIST</button></a>
@@ -116,6 +117,10 @@ Trainer details
         {{/each}}
         </div>
 
+
+
+
+ 
 
 
 
