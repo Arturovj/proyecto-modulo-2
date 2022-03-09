@@ -1,0 +1,10 @@
+<div class="form-group mb-3">
+    <label for="instagram">Instagram</label>
+    <input name="instagram" type="text" class="form-control {{#if errors.name}}is-invalid{{/if}}" id="instagram" placeholder="Instagram link"
+      value="{{ trainer.instagram }}">
+    {{#if errors.instagram}}
+      <div class="invalid-feedback">
+        {{errors.instagram.message}}
+      </div>
+    {{/if}}
+  </div>

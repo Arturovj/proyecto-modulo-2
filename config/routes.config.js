@@ -29,7 +29,7 @@ router.get('/faq', misc.faq)
 /* Auth routes */
 
 router.get('/register', authController.register)
-router.post('/register', authController.doRegister)
+router.post('/register', upload.single('image'), authController.doRegister)
 router.get('/login', authController.login)
 router.post('/login', authController.doLogin)
 router.get('/activate/:token', authController.activate)

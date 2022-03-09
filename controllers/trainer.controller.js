@@ -6,27 +6,20 @@ const Comment = require('../models/comment.model')
 
 
 module.exports.trainersList = (req, res, next) => {
+  console.log('entro')
   Trainer.find()
-  .populate('comments')
-  .then((trainers) => {
-    console.log(trainers)
-   const ratedTrainers = trainers.map(trainer => {
-        return {
-            ...trainer._doc,
-            averageRating : trainer.comments.reduce((acc, curr) => acc + curr.rating, 0) / trainer.comments.length
-        }
+    .populate('comments')
+    .then((trainers) => {
+      const ratedTrainers = trainers.map(trainer => {
+            return {
+                ...trainer._doc,
+                averageRating : trainer.comments.reduce((acc, curr) => acc + curr.rating, 0) / trainer.comments.length
+            }
+        })
+        res.render('trainers/trainersList', { trainers })
     })
-    console.log(ratedTrainers)
-  
-    res.render('trainers/trainersList', {trainers : ratedTrainers})
-})
-.catch((error) => next(error))
-  .then((trainers) => {
-    console.log(trainers, "entrenadores")
-    res.render('trainers/trainersList', {trainers})
-  })
-    .catch((error) =>(error))
-  }
+    .catch((error) => next(error))
+}
   	
 
 module.exports.trainerDetail = (req, res, next) => {

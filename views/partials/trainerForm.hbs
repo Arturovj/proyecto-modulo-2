@@ -44,6 +44,53 @@
     {{/if}}
   </div> --}}
 
+   <div class="form-group mb-3">
+    <label for="contact">Contact</label>
+    <input name="contact" type="text" class="form-control {{#if errors.contact}}is-invalid{{/if}}" id="contact" placeholder="Enter contact email"
+      value="{{ trainer.contact }}">
+    {{#if errors.name}}
+      <div class="invalid-feedback">
+        {{errors.contact.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="facebook">Facebook</label>
+    <input name="facebook" type="text" class="form-control {{#if errors.name}}is-invalid{{/if}}" id="facebook" placeholder="Facebook link"
+      value="{{ trainer.facebook }}">
+    {{#if errors.facebook}}
+      <div class="invalid-feedback">
+        {{errors.facebook.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="twitter">Twitter</label>
+    <input name="twitter" type="text" class="form-control {{#if errors.name}}is-invalid{{/if}}" id="twitter" placeholder="Twitter link"
+      value="{{ trainer.twitter }}">
+    {{#if errors.twitter}}
+      <div class="invalid-feedback">
+        {{errors.twitter.message}}
+      </div>
+    {{/if}}
+  </div>
+
+
+  <div class="form-group mb-3">
+    <label for="instagram">Instagram</label>
+    <input name="instagram" type="text" class="form-control {{#if errors.name}}is-invalid{{/if}}" id="instagram" placeholder="Instagram link"
+      value="{{ trainer.instagram }}">
+    {{#if errors.instagram}}
+      <div class="invalid-feedback">
+        {{errors.instagram.message}}
+      </div>
+    {{/if}}
+  </div>
+
+
+
 
 
   <div class="form-group mb-3">
