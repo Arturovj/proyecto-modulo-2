@@ -15,19 +15,27 @@
             <p class="card-info mx-5"><small> <span class="fa fa-map-marker"></span><strong>Address: </strong>{{gym.address}}</small></p>
             <p class="card-info mx-5"> <span class="fa fa-newspaper-o"></span><strong>Description: </strong>{{gym.description}}</p>
             <p class="card-info mx-5"> <span class="fa fa-clock-o"></span><strong>Timeline: </strong>{{gym.timeline}}</p>
+            
+            
+          {{#isMyAccount currentUserId=currentUser.id gymUserId=gym.user}}
             <div class="d-flex">
-
+            
+                
             <p class="card-info mx-5"><a href="/gyms/{{gym.id}}/edit" class="btn btn-secondary">edit it</a></p>
             {{!-- <p class="card-info mx-5"> --}}
                 <form class="" action="/gyms/{{gym.id}}/delete" method="POST">
                     <button class="btn btn-danger" type="submit">Delete it</button>
                 </form>
             {{!-- </p> --}}
+           
             </div>
+             {{/isMyAccount}}
         </div>
-        
+         
         
     </div>
+
+
 
 
     <div class="mx-2"id="googleMap"></div>
@@ -113,7 +121,6 @@
         </div>
         {{/each}}
         </div>
-
 
 
 

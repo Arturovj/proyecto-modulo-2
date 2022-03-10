@@ -59,6 +59,7 @@ module.exports.create = (req, res, next) => {
 }
 
 module.exports.doCreate = (req, res, next) => {
+    req.body.user = req.user.id
     let gym = req.body
 
     if (req.file) {

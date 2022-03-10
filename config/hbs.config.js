@@ -1,10 +1,23 @@
 const hbs = require('hbs')
+require('mongoose')
 
 hbs.registerPartials('./views/partials')
 
 
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 
+
+
+hbs.registerHelper('isMyAccount', function (context, options) {
+    const currentUserId = context.hash.currentUserId;
+    const gymUserId = context.hash.gymUserId;
+  
+    if (gymUserId && gymUserId.equals(currentUserId)) {
+      return context.fn(this);
+    } else {
+      return context.inverse(this);
+    }
+  });
 
 
 

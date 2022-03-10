@@ -28,7 +28,12 @@ const gymSchema = new Schema ({
     },
     capacity: {
         type: Number,
-    }
+    },
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+    },
 },{
     timestamps: true
 })
