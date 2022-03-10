@@ -1,21 +1,22 @@
-Check out our trainers!
-
-
-
-<div class="container mb-5">
+<h1 class="trainerListHead">Check out our awesome trainers!</h1>
+<div class="container">
   <div class="row mt-5">
     {{#each trainers as |trainer|}}
-      <div class="col-xl-3 col-sm-6 col-xs-12 gy-4 d-flex align-items-stretch">
-        <div class="card w-80 round-card " style="width: 18rem;">
+      <div class="col-xl-3 col-sm-6 col-xs-12 gy-4 d-flex align-items-stretch mb-5">
+        <div class="card w-80 round-card mb-5 " style="width: 18rem;">
           <div class="avatar-flip">
     <img src="{{trainer.image}}" height="150" width="150">
     <img src="http://i1112.photobucket.com/albums/k497/animalsbeingdicks/abd-3-12-2015.gif~original" height="150" width="150">
   </div>
-          <div class="card-body d-flex flex-column mx-2">
+          <div class="card-body d-flex flex-column mx-3 mb-1">
               <div class="trainer-name">
                   <div>
                 <h6 class="card-title1">{{trainer.name}}</h6>
                  </div>
+                 <div>
+                   <p>{{trainer.description}}</p>
+                 </div>
+                 <br>
                  <div class="starsPosition">
                      <div>
             <b>Rating: <span data-rating={{trainer.averageRating}} class="averageStars"></span></b>
