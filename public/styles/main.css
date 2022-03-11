@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #fec400;
   }
 
   .navbar-toggler {
@@ -231,13 +231,12 @@ ul{
 
 :root {
     --size: 400px;
-    --blue: #787a7c;
+    --blue: #635e5e;
     --lb: rgba(0, 0, 0, 0.5);
   }
   .body-hover {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    display: flex;
+    grid-template-columns: 500px, 1fr;
     background-color: var(--blue);
     color: rgb(250, 214, 71);
     font-family: "Roboto Condensed", sans-serif;
@@ -245,6 +244,8 @@ ul{
     padding-bottom: 50px;
   }
   .container-gym {
+    
+    margin: auto;
     width: var(--size);
     height: var(--size);
     display: grid;
@@ -400,7 +401,7 @@ ul{
 
   
   .body-testimony {
-    background-color: #635e5e;
+    background-color: #787a7c;
     font-family: "Montserrat", sans-serif;
     display: flex;
     flex-direction: column;
@@ -799,4 +800,11 @@ body-trainer {
   text-align: center;
   margin-top: 50px;
   margin-bottom: 120px;
+}
+
+
+.yellow-letters{
+  align-items: center;
+  text-align: center;
+  margin-top: 55px;
 }
