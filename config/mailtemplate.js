@@ -193,7 +193,7 @@ module.exports.generateEmail = (token) => {
              align="center" bgcolor="#c7896f" role="presentation" style="border:none;border-radius:3px;cursor:auto;mso-padding-alt:10px 25px;background:#c7896f;" valign="middle"
           >
             <a
-               href="${process.env.HOST || `http://localhost:${process.env.PORT || 3000}`}/activate/${token}" style="display:inline-block;background:#c7896f;color:#FFFFFF;font-family:Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;" target="_blank"
+               href="${process.env.HOST || `http://localhost:${process.env.PORT || 3000}`}activate/${token}" style="display:inline-block;background:#c7896f;color:#FFFFFF;font-family:Ubuntu, Helvetica, Arial, sans-serif, Helvetica, Arial, sans-serif;font-size:13px;font-weight:normal;line-height:120%;margin:0;text-decoration:none;text-transform:none;padding:10px 25px;mso-padding-alt:0px;border-radius:3px;" target="_blank"
             >
               Activate account
             </a>
