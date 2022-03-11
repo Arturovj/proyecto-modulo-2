@@ -10,9 +10,19 @@
 
 ### Preview of the website
 
-<a href="" align="center"><img src="./public/img/READMEPIC1.jpg" alt="" width="1080"></a>
+<a href="" align="center"><img src="./public/img/IMAGEN1README1.jpg" alt="" width="1080"></a>
 
-<a href="" align="center"><img src="./public/img/READMEPIC2.jpg" alt="" width="1080"></a>
+<a href="" align="center"><img src="./public/img/IMAGEN2README.jpg" alt="" width="1080"></a>
+
+<a href="" align="center"><img src="./public/img/image3readme.jpg" alt="" width="1080"></a>
+
+<a href="" align="center"><img src="./public/img/image4readme.jpg" alt="" width="1080"></a>
+
+<a href="" align="center"><img src="./public/img/image5readme.jpg" alt="" width="1080"></a>
+
+<a href="" align="center"><img src="./public/img/image6readme.jpg" alt="" width="1080"></a>
+
+<a href="" align="center"><img src="./public/img/image7readme.jpg" alt="" width="1080"></a>
 
 
 
