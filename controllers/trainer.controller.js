@@ -16,7 +16,7 @@ module.exports.trainersList = (req, res, next) => {
                 averageRating : trainer.comments.reduce((acc, curr) => acc + curr.rating, 0) / trainer.comments.length
             }
         })
-        res.render('trainers/trainersList', { trainers })
+        res.render('trainers/trainersList', { trainers : ratedTrainers })
     })
     .catch((error) => next(error))
 }
