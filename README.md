@@ -12,7 +12,7 @@
 
 <a href="" align="center"><img src="./public/img/IMAGEN1README1.jpg" alt="" width="1080"></a>
 
-<a href="" align="center"><img src="./public/img/IMAGEN2README2.jpg" alt="" width="1080"></a>
+<a href="" align="center"><img src="./public/img/imagen2readme2.jpg" alt="" width="1080"></a>
 
 <a href="" align="center"><img src="./public/img/image3readme.jpg" alt="" width="1080"></a>
 
