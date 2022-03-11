@@ -792,3 +792,11 @@ body-trainer {
   position: relative;
   top:15px;
 }
+
+/* Trainer List */
+
+.trainerListHead {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 120px;
+}
