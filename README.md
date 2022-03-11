@@ -6,6 +6,9 @@
 
 ### 📜 **what is the project about**
 
+Is an app to find and write reviews about gyms and trainers.
+
+You can promote your gym, and also your services as a trainer.
 
 
 ### Preview of the website
