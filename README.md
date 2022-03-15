@@ -2,8 +2,6 @@
 
 # IRON GYM
 
-## work in progress
-
 ### 📜 **what is the project about**
 
 Is an app to find and write reviews about gyms and trainers.
